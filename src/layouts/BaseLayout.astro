@@ -3,7 +3,7 @@
 const { title = 'Squares', shape = 'square', pixelSize } = Astro.props;
 import "../styles/main.css";
 import ThreeShader from "../components/ThreeShader.astro";
-
+import mainUrl from "../script/main.ts?url";
 const palettes = {
   square  : { ink: '#ff6d00', bg: '#0d0d0d' }, 
   
@@ -21,6 +21,7 @@ const { bg, ink } = palettes[shape as Shape];
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+
   </head>
   <body data-shape={shape}>
   

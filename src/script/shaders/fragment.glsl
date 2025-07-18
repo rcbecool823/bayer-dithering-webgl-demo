@@ -93,13 +93,16 @@ float fbm2(vec2 uv, float t)
 
 
 float maskCircle(vec2 p, float cov) {
-    
-    float r = sqrt(cov) * .3;
-    float d = length(p - 0.5) - r; 
+
+    float r = sqrt(cov) * .25;
+    float d = length(p - 0.5) - r;
     // cheap analytic AA
     float aa = 0.5 * fwidth(d);
-    return cov * (1.0 - smoothstep(-aa, aa, d * 3.));
+    return cov * (1.0 - smoothstep(-aa, aa, d * 2.));
+    
 }
+
+
 float maskTriangle(vec2 p, vec2 id, float cov) {
     bool flip = mod(id.x + id.y, 2.0) > 0.5;
     if (flip) p.x = 1.0 - p.x;
