@@ -1,0 +1,11 @@
+---
+const { shape, pixelSize, bg, ink } = Astro.props;
+---
+<div id="hero_bg" 
+  data-shape={shape} 
+  data-pixel-size={pixelSize}
+  data-ink={ink}
+  style={`background-color: ${bg};`}
+  />
+
+<script type="module" src="/src/script/main.ts" is:inline></script>
